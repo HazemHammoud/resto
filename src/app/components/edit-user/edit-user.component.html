@@ -1,0 +1,24 @@
+<div class="container" style="margin-top: 150px;">
+    <form #editUserForm="ngForm" (ngSubmit)='editUser()'>
+        <div class="form-row" *ngIf='user'>
+            <div class="form-group col-md-12">
+                <input type="text" class="form-control" placeholder="firstName *" [(ngModel)]='user.firstName'
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group col-md-12">
+                <input type="text" class="form-control" placeholder="lastName *" [(ngModel)]='user.lastName'
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group col-md-12">
+                <input type="tel" class="form-control" placeholder="Telephone *" [(ngModel)]='user.tel'
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+
+        </div>
+
+
+        <div class="regerv_btn">
+            <button type="submit" class="btn_4">Edit</button>
+        </div>
+    </form>
+</div>

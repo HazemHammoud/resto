@@ -1,0 +1,15 @@
+<div class="single_blog_item">
+    <div class="single_blog_img">
+        <img src="assets/img/food_item/food_item_2.png" alt="">
+    </div>
+    <div class="single_blog_text">
+        <h3>{{menuInput.name}}</h3>
+        <p [ngClass]="{
+            redClass:priceColor(menuInput.price)=='red',
+            orangeClass:priceColor(menuInput.price)=='orange',
+            greenClass:priceColor(menuInput.price)=='green' 
+        }">{{menuInput.description}}</p>
+        <p [ngStyle]="{'color':priceColor(menuInput.price)}">{{menuInput.price}} DT</p>
+        <button (click)=goToOrders(menuInput._id)>Order</button>
+    </div>
+</div>

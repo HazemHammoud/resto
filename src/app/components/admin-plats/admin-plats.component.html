@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let plat of plats; let i=index'>
+            <td>{{i}}</td>
+            <th scope="row">{{plat._id}}</th>
+            <td>{{plat.name}}</td>
+            <td>{{plat.price}}</td>
+            <td>{{plat.description}}</td>
+            <td>
+                <button class="btn btn-info" (click)='goToDisplay(plat._id)'>Display</button>
+                <button class="btn btn-warning" (click)='goToEdit(plat._id)'>Edit</button>
+                <button class="btn btn-danger" (click)='deletePlat(plat._id)'>Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

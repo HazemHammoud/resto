@@ -1,0 +1,99 @@
+<div class="container" style="margin-top: 150px;">
+    <section class="regervation_part section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5">
+                    <div class="section_tittle">
+                        <h2>Signup</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="regervation_part_iner">
+                        <form [formGroup]='signupForm'>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <input type="text" class="form-control" formControlName='firstName'
+                                        placeholder="firstName *">
+                                </div>
+                                <div *ngIf="signupForm.controls['firstName'].invalid &&
+                                 (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty)">
+                                    <div *ngIf="signupForm.controls['firstName'].errors.required" style="color: red;">
+                                        First Name required</div>
+                                    <div *ngIf="signupForm.controls['firstName'].errors.minlength" style="color: red;">
+                                        At least 5 characters</div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="text" class="form-control" formControlName='lastName'
+                                        placeholder="lastName *">
+                                </div>
+                                <div *ngIf="signupForm.controls['lastName'].invalid &&
+                                 (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty)">
+                                    <div *ngIf="signupForm.controls['lastName'].errors.required" style="color: red;">
+                                        Last Name required</div>
+                                    <div *ngIf="signupForm.controls['lastName'].errors.minlength" style="color: red;">
+                                        At least 5 characters</div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="email" class="form-control" formControlName='email'
+                                        placeholder="Email address *">
+                                </div>
+                                <div *ngIf="signupForm.controls['email'].invalid &&
+                                (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                                    <div *ngIf="signupForm.controls['email'].errors.required" style="color: red;">
+                                        Email required</div>
+                                    <div *ngIf="signupForm.controls['email'].errors.email" style="color: red;">
+                                        Invalid Email</div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="password" class="form-control" formControlName='pwd'
+                                        placeholder="password*">
+                                </div>
+                                <div *ngIf="signupForm.controls['pwd'].invalid &&
+                                 (signupForm.controls['pwd'].touched || signupForm.controls['pwd'].dirty)">
+                                    <div *ngIf="signupForm.controls['pwd'].errors.required" style="color: red;">
+                                        Password required</div>
+                                    <div *ngIf="signupForm.controls['pwd'].errors.minlength || signupForm.controls['pwd'].errors.maxlength"
+                                        style="color: red;">
+                                        Must 6-12 characters</div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <input type="password" class="form-control" formControlName='cpwd'
+                                        placeholder="Confirm password*">
+                                </div>
+                                <div
+                                    *ngIf="signupForm.controls['cpwd'].invalid &&(signupForm.controls['cpwd'].dirty ||signupForm.controls['cpwd'].touched)">
+                                    <div *ngIf="signupForm.controls['cpwd'].errors.mustMatch" class="text-danger">
+                                        Confirm Pwd must match PWD
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <input type="tel" class="form-control" formControlName='tel'
+                                        placeholder="Phone number *">
+                                </div>
+                                <div *ngIf="signupForm.controls['tel'].invalid &&
+                                 (signupForm.controls['tel'].touched || signupForm.controls['tel'].dirty)">
+                                    <div *ngIf="signupForm.controls['tel'].errors.required" style="color: red;">
+                                        Telephone required</div>
+                                    <div *ngIf="signupForm.controls['tel'].errors.minlength || signupForm.controls['tel'].errors.maxlength"
+                                        style="color: red;">
+                                        Must 8 number</div>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="regerv_btn">
+                                <button type="submit" class="btn_4" (click)='signup()'>Signup</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
